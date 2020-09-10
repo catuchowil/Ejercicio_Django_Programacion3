@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+<h1>
+    Sistema de Productos (ELIMINACION DE PRODUCTOS)
+    
+</h1>
+{% endblock %}
+
+{% block migas %}
+      <ol class="breadcrumb">
+        <li><a href="{% url 'inicio:index' %}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Eliminar Productos</li>
+      </ol>
+{% endblock %}
+
+
+
+
+{% block principal %}
+
+<diw id="row">
+    <br>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title">¿Esta seguro de eliminar?</h3>
+            </div>
+
+            <form role="form" method="POST">
+                {% csrf_token %}
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre del Producto</label>
+                        {{datos.name}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Categoría del Producto</label>
+                        {{datos.cate}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Precio Unitario</label>
+                        {{datos.pre_uni}}
+                    </div>
+
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</diw>
+
+{% endblock %}

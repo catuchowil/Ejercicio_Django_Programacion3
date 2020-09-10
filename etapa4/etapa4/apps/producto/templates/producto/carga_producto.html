@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+{% block titulo %}
+<h1>
+    Sistema de Productos (CARGA DE PRODUCTOS)
+    
+</h1>
+{% endblock %}
+
+
+{% block principal %}
+
+<diw id="row">
+    <br>
+    <div class="col-md-6">
+
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Formulario de Carga de Productos</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" method="POST">
+                {% csrf_token %}
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre del Producto</label>
+                        {{cargadatos.name}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Categoría del Producto</label>
+                        {{cargadatos.cate}}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Precio Unitario</label>
+                        {{cargadatos.pre_uni}}
+                    </div>
+                   
+                </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</diw>
+{% endblock %}
